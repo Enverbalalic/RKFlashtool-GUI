@@ -104,7 +104,7 @@ class Ui_Form(object):
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
-                if(self.SystemCheckBox.checkstate() == 2):
+                if(self.SystemCheckBox.checkState() == 2):
                     process = subprocess.Popen("sudo ./RKFlashTool r "+ self.SystemOffset.text() + " " + self.SystemPartitionSize.text() + " > " + "systemBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
