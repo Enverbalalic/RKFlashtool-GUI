@@ -26,86 +26,86 @@ class Ui_Form(object):
 
             if(FlashBackupDetector.objectName() == "FlashButton"):
                 if(self.LoaderCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.LoaderOffset.text() + " " + self.LoaderPartitionSize.text() + " <" + self.LoaderLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.LoaderOffset.text() + " " + self.LoaderPartitionSize.text() + " <" + self.LoaderLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.ParameterCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.ParameterOffset.text() + " " + self.ParameterPartitionSize.text() + " <" + self.ParameterLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.ParameterOffset.text() + " " + self.ParameterPartitionSize.text() + " <" + self.ParameterLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.MiscCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.MiscOffset.text() + " " + self.MiscPartitionSize.text() + " <" + self.MiscLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.MiscOffset.text() + " " + self.MiscPartitionSize.text() + " <" + self.MiscLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.KernelCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.KernelOffset.text() + " " + self.KernelPartitionSize.text() + " <" + self.MiscLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.KernelOffset.text() + " " + self.KernelPartitionSize.text() + " <" + self.MiscLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.RamdiskCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.RamdiskOffset.text() + " " + self.RamdiskPartitionSize.text() + " <" + self.RamdiskLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.RamdiskOffset.text() + " " + self.RamdiskPartitionSize.text() + " <" + self.RamdiskLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.RecoveryCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.RecoveryOffset.text() + " " + self.RecoveryPartitionSize.text() + " <" + self.RecoveryLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.RecoveryOffset.text() + " " + self.RecoveryPartitionSize.text() + " <" + self.RecoveryLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.SystemCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool w "+ self.SystemOffset.text() + " " + self.SystemPartitionSize.text() + " <" + self.SystemLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool w "+ self.SystemOffset.text() + " " + self.SystemPartitionSize.text() + " <" + self.SystemLocationDisplay.text(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
             if(FlashBackupDetector.objectName() == "BackupButton"):
                 if(self.LoaderCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.LoaderOffset.text() + " " + self.LoaderPartitionSize.text() + " > " + "loaderBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.LoaderOffset.text() + " " + self.LoaderPartitionSize.text() + " > " + "loaderBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.ParameterCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.ParameterOffset.text() + " " + self.ParameterPartitionSize.text() + " > " + "parameterBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.ParameterOffset.text() + " " + self.ParameterPartitionSize.text() + " > " + "parameterBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
                 
                 elif(self.MiscCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.MiscOffset.text() + " " + self.MiscPartitionSize.text() + " > " + "miscBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.MiscOffset.text() + " " + self.MiscPartitionSize.text() + " > " + "miscBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.KernelCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.KernelOffset.text() + " " + self.KernelPartitionSize.text() + " > " + "kernelBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.KernelOffset.text() + " " + self.KernelPartitionSize.text() + " > " + "kernelBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.RamdiskCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.RamdiskOffset.text() + " " + self.RamdiskPartitionSize.text() + " > " + "ramdiskBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.RamdiskOffset.text() + " " + self.RamdiskPartitionSize.text() + " > " + "ramdiskBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.RecoveryCheckBox.checkState() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.RecoveryOffset.text() + " " + self.RecoveryPartitionSize.text() + " > " + "recoveryBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.RecoveryOffset.text() + " " + self.RecoveryPartitionSize.text() + " > " + "recoveryBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
 
                 if(self.SystemCheckBox.checkstate() == 2):
-                    process = subprocess.Popen("./RKFlashTool r "+ self.SystemOffset.text() + " " + self.SystemPartitionSize.text() + " > " + "systemBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                    process = subprocess.Popen("sudo ./RKFlashTool r "+ self.SystemOffset.text() + " " + self.SystemPartitionSize.text() + " > " + "systemBackup.img", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
                     self.LogText.append(out.decode("ascii"))
                     self.LogText.append(err.decode("ascii"))
